@@ -28,6 +28,8 @@ try:
     events.append(data)
     print("----------------------------------------------------------")
 except:
-    print("Ented")
+    print("\n Ented \n")
 for element in events:
-   print(element[1])
+    for key in element:
+        print(key, " : ", element[key])
+    print("\n----------------------------------------\n")
