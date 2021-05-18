@@ -1,0 +1,33 @@
+#! /usr/bin/env python
+import datetime
+
+print("""+++++++++++++++++++++++++++++++++++++++++++++++++++
+THIS IS THE SMALL PROGRAM TO STORE EVENTS
++++++++++++++++++++++++++++++++++++++++++++++++ """)
+
+events = []
+print("If you want to stop adding press ctrl + Z (windows) or ctrl + D (ubuntu)")
+n=-1
+
+try:
+
+ while True:
+    event = input("Event : ")
+    date = input("Date (dd/mm/yy) : ")
+    time = input("Time (24hr) : ")
+    place = input("Place :")
+    upload = datetime.datetime.now()
+    n =+ 1
+    data = {
+      "event" : event,
+      "date" : date,
+      "time" : time,
+      "place" : place,
+      "upload" : upload 
+    }
+    events.append(data)
+    print("----------------------------------------------------------")
+except:
+    print("Ented")
+for element in events:
+   print(element[1])
