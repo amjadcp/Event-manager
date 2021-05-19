@@ -35,5 +35,7 @@ for element in events:
         print(key, " : ", element[key])
     print("\n----------------------------------------\n")
 
-    j = json.dumps(events)
-    print(f"\n\n{j}")
+    j = json.dumps(events, indent=5)
+    outputfile = open('output.json', 'w')
+    outputfile.write(j)
+    outputfile.close()
