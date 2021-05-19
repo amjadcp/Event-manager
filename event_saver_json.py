@@ -7,7 +7,7 @@ THIS IS THE SMALL PROGRAM TO STORE EVENTS
 +++++++++++++++++++++++++++++++++++++++++++++++ """)
 
 events = []
-print("If you want to stop adding press ctrl + Z (windows) or ctrl + D (ubuntu)")
+print("If you want to stop adding press ctrl + C ")
 n=-1
 
 try:
@@ -28,12 +28,16 @@ try:
     }
     events.append(data)
     print("----------------------------------------------------------")
-except:
-    print("\n Ented \n")
+except KeyboardInterrupt:
+    print("\n\nDone\n")
+    print("Events:")
+    print("\n----------------------------------------\n")
 for element in events:
     for key in element:
         print(key, " : ", element[key])
     print("\n----------------------------------------\n")
 
-    j = json.dumps(events)
-    print(f"\n\n{j}")
+    j = json.dumps(events, indent=5)
+    outputfile = open('output.json', 'w')
+    outputfile.write(j)
+    outputfile.close()

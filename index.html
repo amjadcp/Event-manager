@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <title>Just a Json Display</title>
+    <style>
+        table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+    </style>
+</head>
+
+<body>
+    <h2>Events Display</h2>
+    <table>
+        <tr>
+            <th>Event Name</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Place</th>
+        </tr>
+        <script>
+        // get the table
+        const table = document.getElementsByTagName('table')[0];
+
+        // function to load json and return it as a js object to given callback
+        function loadJSONFile(path, callback) {
+            var httpRequest = new XMLHttpRequest();
+            httpRequest.onreadystatechange = function() {
+                if (httpRequest.readyState === 4) {
+                    if (httpRequest.status === 200) {
+                        var data = JSON.parse(httpRequest.responseText);
+                        if (callback) callback(data);
+                    }
+                }
+            };
+            httpRequest.open('GET', path);
+            httpRequest.send();
+        }
+
+        // load the output.json file
+        loadJSONFile('output.json', function(data) {
+            data.forEach(element => {
+                // create current row and each column elements
+                const row = document.createElement('tr');
+                const event_name_column = document.createElement('td');
+                event_name_column.textContent = element.event;
+                const event_date_column = document.createElement('td');
+                event_date_column.textContent = element.date;
+                const event_time_column = document.createElement('td');
+                event_time_column.textContent = element.time;
+                const event_place_column = document.createElement('td');
+                event_place_column.textContent = element.place;
+                row.appendChild(event_name_column);
+                row.appendChild(event_date_column);
+                row.appendChild(event_time_column);
+                row.appendChild(event_place_column);
+                // add current row to the table
+                table.appendChild(row);
+            });
+        });
+        </script>
+    </table>
+</body>
+
+</html>
