@@ -7,7 +7,7 @@ THIS IS THE SMALL PROGRAM TO STORE EVENTS
 +++++++++++++++++++++++++++++++++++++++++++++++ """)
 
 events = []
-print("If you want to stop adding press ctrl + Z (windows) or ctrl + D (ubuntu)")
+print("If you want to stop adding press ctrl + C ")
 n=-1
 
 try:
