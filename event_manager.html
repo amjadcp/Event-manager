@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <script language="javascript">
+        function manager()
+       {
+          var manager_js = {
+         "event" : document.frm.event.value,
+         "date" : document.frm.date.value,
+         "time" : document.frm.time.value,
+         "place" : document.frm.place.value
+                           };
+          var manager_json = JSON.stringify(manager_js);
+          prompt(manager_json)
+          
+        }
+          </script>
+    </head>
+ <body>
+        <form name="frm">
+            event &nbsp; : &nbsp; <input type="text" name ="event"> <br>
+            date &nbsp; : &nbsp; <input type="text" name ="date"> <br>
+            time &nbsp; : &nbsp; <input type="text" name ="time"> <br>
+            place &nbsp; : &nbsp; <input type="text" name ="place"> <br>
+            <input type="submit" value="Submit" name="submit" onClick="manager()"> &nbsp;&nbsp; <input type="reset" value="Clear" name="clear">
+        </form>
+    </body>
+</html>
