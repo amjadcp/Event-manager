@@ -28,8 +28,10 @@ try:
     }
     events.append(data)
     print("----------------------------------------------------------")
-except:
-    print("\n Ented \n")
+except KeyboardInterrupt:
+    print("\n\nDone\n")
+    print("Events:")
+    print("\n----------------------------------------\n")
 for element in events:
     for key in element:
         print(key, " : ", element[key])
