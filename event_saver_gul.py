@@ -7,7 +7,6 @@ Program : Event saver
 from os import close, remove
 import tkinter
 import datetime
-global n = 1
 '''to create heading in file'''
 
 file = open("event_saver.txt", "a")
@@ -41,11 +40,10 @@ def main():
       for key in data:
          file.write(f"{str(key)} : {str(data[key])} \n")
       upload = datetime.datetime.now()
-      file.write(f"------------------{n}------------------------{upload}\n")
+      file.write(f"------------------------------------------{upload}\n")
       file.close()
       global message
       message = tkinter.Label(window, text="Updated check event_saver.txt").grid(row=9)
-      n =+ 1
 
 window = tkinter.Tk()
 window.geometry("400x200")
