@@ -7,7 +7,7 @@ Program : Event saver
 from os import close, remove
 import tkinter
 import datetime
-
+global n = 1
 '''to create heading in file'''
 
 file = open("event_saver.txt", "a")
@@ -27,7 +27,6 @@ def clr():
 
 '''function to store and write data from text field and also create label texted as Updated'''
 def main():
-      n = 1
       event = Event.get()
       date = Date.get()
       time = Time.get()
