@@ -47,7 +47,7 @@ def main():
       message = tkinter.Label(window, text="Updated check event_saver.txt").grid(row=9)
       n =+ 1
 
-window = tkinter.Tk()
+window = kinter.Tk()
 window.geometry("400x200")
 window.title("EVENT SAVER")
 event = tkinter.Label(window, text="Event : ").grid(row=0, column=0)
